@@ -64,12 +64,15 @@ if (isset($_POST["nombre"])) {
             <strong>Ubicación:</strong><br>
             Estado: {$estado}<br>
             <br>
+            <strong>Mensaje:</strong><br>
+            Estado: {$mensaje}<br>
+            <br>
             Este mensaje fue enviado a través del formulario de contacto de un landing de Beloved.";
 
         $mail->send();
-        echo "Gracias por contactarnos, nos pondremos en contacto contigo a la brevedad.";
+        echo "✅ Gracias por contactarnos, nos pondremos en contacto contigo a la brevedad.";
     } catch (Exception $e) {
-        echo "Lo sentimos, algo salió mal. Por favor, inténtalo de nuevo. Mailer Error: " .
+        echo "❌ Lo sentimos, algo salió mal. Por favor, inténtalo de nuevo. Mailer Error: " .
             $mail->ErrorInfo;
     }
 } else {
