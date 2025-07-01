@@ -33,6 +33,7 @@ if (isset($_POST["nombre"])) {
     $telefono = strip_tags(trim($_POST["telefono"]));
     $correo = filter_var(trim($_POST["correo"]), FILTER_SANITIZE_EMAIL);
     $estado = strip_tags(trim($_POST["estado"]));
+    $mensaje = strip_tags(trim($_POST["mensaje"]));
 
     // Eliminar saltos de línea
     $nombre = str_replace(["\r", "\n"], [" ", " "], $nombre);
@@ -65,7 +66,7 @@ if (isset($_POST["nombre"])) {
             Estado: {$estado}<br>
             <br>
             <strong>Mensaje:</strong><br>
-            Estado: {$mensaje}<br>
+            {$mensaje}<br>
             <br>
             Este mensaje fue enviado a través del formulario de contacto de un landing de Beloved.";
 
