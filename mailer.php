@@ -27,7 +27,7 @@ $mail->Password = $config["MAIL_PASSWORD"];
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = $config["MAIL_PORT"];
 
-if (isset($_POST["nombre"]) && isset($_POST["de-acuerdo"])) {
+if (isset($_POST["nombre"])) {
     // Sanitización de todos los campos
     $nombre = strip_tags(trim($_POST["nombre"]));
     $telefono = strip_tags(trim($_POST["telefono"]));
