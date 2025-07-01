@@ -43,9 +43,9 @@ if (isset($_POST["nombre"])) {
         //Recipients
         $mail->setFrom(
             "contacto@beloved.org.mx",
-            "Correo contacto@beloved.org.mx"
+            "Mensaje desde landing de Beloved"
         );
-        $mail->addAddress("luiscarlospando@proton.me");
+        $mail->addAddress("contacto@beloved.org.mx");
         $mail->addReplyTo(
             $correo,
             "Hola Beloved, deseo obtener más información."
