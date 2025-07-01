@@ -88,9 +88,10 @@ span {
         &:hover {
             background-color: color-mix(
                 in srgb,
-                var(--btn-secondary) 85%,
+                var(--btn-secondary) 90%,
                 black
             );
+            color: var(--primary);
         }
     }
 }

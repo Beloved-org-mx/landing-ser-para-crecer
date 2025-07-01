@@ -6,6 +6,7 @@ import "../src/navbar";
 import "../src/smooth-scrolling";
 import "../src/form-ajax";
 import "../src/aos";
+import "../src/countdown";
 
 // Header
 document.addEventListener("DOMContentLoaded", function () {
@@ -116,6 +117,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 // Efectos parallax
+/*
 import ParallaxEffect from "./parallax";
 
 // Configuración de los elementos parallax
@@ -133,3 +135,4 @@ const parallaxConfig = [
 document.addEventListener("DOMContentLoaded", () => {
   const parallax = new ParallaxEffect(parallaxConfig);
 });
+*/
