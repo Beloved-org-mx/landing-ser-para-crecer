@@ -1,0 +1,78 @@
+// Mouse selection
+@mixin selection($color, $background) {
+    ::-moz-selection {
+        color: $color;
+        background: $background;
+    }
+    ::selection {
+        color: $color;
+        background: $background;
+    }
+}
+
+// Transitions
+@mixin transition($property, $time) {
+    -webkit-transition: $property $time;
+    -o-transition: $property $time;
+    transition: $property $time;
+}
+
+@mixin transition-menu($time) {
+    -webkit-transition: $time;
+    -o-transition: $time;
+    transition: $time;
+}
+
+// Transform scale
+@mixin transform-scale($foo) {
+    -webkit-transform: scale($foo);
+    -ms-transform: scale($foo);
+    transform: scale($foo);
+}
+
+// Absolute centering X
+@mixin absolute-center-x {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+// Absolute centering Y
+@mixin absolute-center-y {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+// Background images for sections
+@mixin background($imgPath, $position, $size) {
+    background: url($imgPath) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+// Blur effect
+@mixin blur-rgba($r, $g, $b, $a) {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba($r, $g, $b, $a) !important;
+}
+
+// Pulse effect
+@mixin pulse($scale: 1.05, $duration: 0.6s, $easing: ease-in-out) {
+    animation: pulse-animation $duration infinite $easing;
+
+    @keyframes pulse-animation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale($scale);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}

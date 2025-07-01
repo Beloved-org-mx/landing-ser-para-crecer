@@ -1,0 +1,134 @@
+.menu {
+    background-color: rgba(255, 255, 255, 0.8); // blanco semitransparente
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    padding: 0 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -633px;
+    opacity: 0;
+    z-index: -1;
+    @include transition-menu(0.8s);
+
+    #cerrar-menu {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        @include font-size(1.4rem);
+
+        // color: ;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            // color: ;
+        }
+    }
+
+    .menu-contenido {
+        width: 100%;
+        text-align: center;
+        // color: ;
+
+        .logo {
+            width: 180px;
+        }
+
+        nav,
+        #btn-contacto,
+        #social {
+            width: 100%;
+            float: left;
+            display: block;
+        }
+
+        nav,
+        #social {
+            a {
+                // color: ;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    // color: ;
+                }
+            }
+        }
+
+        nav {
+            width: 100%;
+            float: left;
+            font-weight: 300;
+            line-height: 2.4rem;
+            margin: 30px auto;
+            text-align: center;
+            @include font-size(1.4rem);
+        }
+
+        #btn-contacto {
+            margin: 0 auto 30px;
+        }
+
+        #social {
+            @include font-size(2rem);
+        }
+    }
+}
+
+.menu-abierto {
+    right: 0;
+    opacity: 1;
+    z-index: 9999;
+}
+
+#backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -2;
+    @include transition(ease, 0.2s);
+}
+
+.backdrop-opacity-1 {
+    opacity: 1 !important;
+    z-index: 998 !important;
+    @include transition(ease, 0.2s);
+}
+
+// Small devices (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+}
+
+// Medium devices (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    .menu {
+        width: 75%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    .menu {
+        width: 50%;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    .menu {
+        width: 35%;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@include media-breakpoint-up(xxl) {
+}

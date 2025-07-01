@@ -1,0 +1,388 @@
+:root {
+    --primary: #fc136c;
+    --secondary: #ffffff;
+    --headings: #333;
+    --normal-text: #555;
+    --links: #fc136c;
+    --btn-primary: #fc136c;
+    --btn-secondary: #ffffff;
+    --rating: #facc15;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--normal-text);
+    font-family: "Inter", sans-serif;
+    @include font-size(1.2rem);
+    position: relative;
+}
+
+header,
+section,
+footer {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.mh-100 {
+    min-height: 100vh;
+}
+
+a {
+    color: var(--links);
+    text-decoration: none;
+    @include transition(ease, 0.3s);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--headings);
+    font-weight: bold;
+}
+
+span {
+    color: var(--primary);
+}
+
+.btn {
+    cursor: pointer;
+    @include transition(ease, 0.3s);
+
+    &.pulse {
+        @include pulse(1.08, 2s);
+    }
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    color: var(--secondary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &:hover {
+        &:hover {
+            background-color: color-mix(in srgb, var(--btn-primary) 85%, black);
+        }
+    }
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary);
+    color: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &:hover {
+        &:hover {
+            background-color: color-mix(
+                in srgb,
+                var(--btn-secondary) 85%,
+                black
+            );
+        }
+    }
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--btn-primary);
+    border: 2px solid var(--btn-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    @include transition(ease, 0.3s);
+
+    &:hover {
+        &:hover {
+            background-color: var(--btn-primary);
+            border-color: var(--btn-primary);
+            color: #fff;
+        }
+    }
+}
+
+.py-60 {
+    padding: 60px 0;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.pb-60 {
+    padding-bottom: 60px;
+}
+
+.py-30 {
+    padding: 30px 0;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.elemento-parallax {
+    will-change: transform;
+    transform: translateY(0);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.1s ease-out;
+    pointer-events: none; // Opcional: evita interferencias con clicks
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8); // blanco semitransparente
+    width: 100%;
+    height: auto;
+    padding: 15px 30px;
+    // color: ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    @include transition(ease, 0.2s);
+
+    #logo-navbar {
+        width: 200px;
+        @include transition(ease, 0.2s);
+    }
+
+    #mburger {
+        font-size: 1.4rem;
+        position: relative;
+        top: 4px;
+
+        &:hover,
+        &:focus {
+            // color: ;
+        }
+    }
+}
+
+.navbar-scroll {
+    background-color: rgba(255, 255, 255, 0.2); // blanco semitransparente
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 30px !important;
+    @include transition(ease, 0.3s);
+
+    #logo-navbar {
+        width: 180px !important;
+    }
+
+    #mburger {
+        // color: !important;
+    }
+}
+
+.navbar-scroll-over-dark {
+    background-color: rgba(255, 255, 255, 0.8); // blanco semitransparente
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    background-color: var(--secondary);
+    transition:
+        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .card-icon {
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 1rem;
+        background-color: #fde8ef; /* color de fondo suave */
+        margin-bottom: 1.5rem;
+
+        i {
+            @include font-size(1.8rem);
+        }
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #111827; /* gris oscuro */
+        margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #4b5563; /* gris medio */
+        line-height: 1.5;
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 8px 24px rgba(252, 19, 108, 0.25);
+        transform: translateY(-4px);
+    }
+}
+
+#jumbotron {
+    background-image:
+        radial-gradient(
+            circle at 25% 25%,
+            rgba(252, 19, 108, 0.1) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 75% 75%,
+            rgba(252, 19, 108, 0.05) 0%,
+            transparent 50%
+        );
+    min-height: 100vh;
+
+    .container,
+    .row {
+        min-height: 100vh;
+    }
+
+    h1 {
+        @include font-size(4rem);
+    }
+}
+
+#beneficios {
+    background: rgb(249 250 251 / 1);
+}
+
+#testimonios {
+    .testimonio {
+        i {
+            color: var(--rating);
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        ul {
+            p {
+                @include font-size(0.8rem);
+            }
+        }
+    }
+}
+
+#oferta {
+    background: linear-gradient(to right, #db2777, #be185d);
+    color: var(--secondary);
+    text-align: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--secondary);
+    }
+
+    p {
+        opacity: 0.9;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.1); // blanco semitransparente
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        h1 {
+            @include font-size(4rem);
+        }
+
+        .card-text {
+            color: var(--secondary);
+        }
+
+        .text-muted {
+            color: var(--secondary) !important;
+            opacity: 0.8;
+        }
+    }
+
+    .metodos-de-pago {
+        i {
+            @include font-size(1.8rem);
+        }
+    }
+}
+
+#preguntas-frecuentes {
+    background: rgb(249 250 251 / 1);
+
+    .accordion {
+        background-color: #333;
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+
+        .accordion-button:not(.collapsed) {
+            background-color: #eee;
+            color: var(--headings);
+        }
+    }
+}
+
+#contacto {
+    ul {
+        p,
+        a {
+            @include font-size(1rem);
+        }
+    }
+
+    i {
+        background-color: rgb(252 231 243 / 1);
+        border-radius: 50px;
+        color: var(--primary);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        border-radius: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        background-color: var(--secondary);
+        transition:
+            box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+}

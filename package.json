@@ -1,0 +1,40 @@
+{
+  "name": "landing-ser-para-crecer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --watch",
+    "sass": "sass --watch scss/main.scss:assets/css/styles.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/luiscarlospando/starter-boilerplate.git"
+  },
+  "author": "Luis Carlos Pando <hey@luiscarlospando.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/luiscarlospando/starter-boilerplate/issues"
+  },
+  "homepage": "https://gitlab.com/luiscarlospando/starter-boilerplate#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
+}
